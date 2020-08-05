@@ -1,0 +1,34 @@
+definitions:
+  Req:
+    properties:
+      name:
+        type: string
+        x-go-name: Name
+    type: object
+    x-go-package: _/Users/lamo/github.com/go-web-programming/swagger
+  Resp:
+    properties:
+      msg:
+        type: string
+        x-go-name: Msg
+    type: object
+    x-go-package: _/Users/lamo/github.com/go-web-programming/swagger
+info: {}
+paths:
+  /helloworld:
+    get:
+      operationId: idofHelloworld
+      parameters:
+      - description: name
+        in: body
+        name: Body
+        schema:
+          $ref: '#/definitions/Req'
+      responses:
+        "200":
+          $ref: '#/responses/Resp'
+responses:
+  Resp:
+    schema:
+      $ref: '#/definitions/Resp'
+swagger: "2.0"
